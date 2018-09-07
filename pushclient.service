@@ -1,0 +1,14 @@
+[Unit]
+Description=PushClient
+After=rc-local.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/var/PushClient
+ExecStart=/usr/bin/pipenv run python push_client.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
